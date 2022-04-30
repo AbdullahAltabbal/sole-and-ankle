@@ -40,6 +40,7 @@ margin-right: auto;
 margin-left:auto;
     display: flex;
     gap:26px;
+    padding: 16px;
 `;
 
 const NavLink = styled.a`
