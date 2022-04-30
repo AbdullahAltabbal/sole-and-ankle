@@ -39,7 +39,7 @@ padding-left:26px;;
 margin-right: auto;
 margin-left:auto;
     display: flex;
-    gap:26px;
+    gap:32px;
     padding: 16px;
 `;
 
