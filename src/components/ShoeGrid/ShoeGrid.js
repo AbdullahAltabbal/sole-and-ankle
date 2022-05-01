@@ -8,7 +8,9 @@ const ShoeGrid = () => {
   return (
     <Wrapper>
       {SHOES.map((shoe) => (
-        <ShoeCard key={shoe.slug} {...shoe} />
+        <CardWrapper key={shoe.slug}>
+          <ShoeCard  {...shoe} />
+        </CardWrapper>
       ))}
     </Wrapper>
   );
@@ -16,7 +18,17 @@ const ShoeGrid = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  gap:16px;
+  flex-wrap: wrap;
+  gap:32px;
+`;
+
+const CardWrapper = styled.div`
+
+// wichtig!! --> das ist nötig damit die Bilder nicht kleiner werden auf auf einer Linea passen 
+  min-width: 275px;
+  
+  
+  flex: 1;
 `;
 
 export default ShoeGrid;
