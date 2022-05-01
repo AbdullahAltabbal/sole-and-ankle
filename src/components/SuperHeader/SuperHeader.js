@@ -23,9 +23,12 @@ const SuperHeader = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 8px;
+gap:16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  height:40px;
   display: flex;
-  gap: 16px;
+  align-items: center;
   font-size: 0.875rem;
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
