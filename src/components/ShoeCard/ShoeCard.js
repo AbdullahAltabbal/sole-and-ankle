@@ -86,11 +86,14 @@ const Image = styled.img`
 width: 100%;
 transition: transform 500ms;
 will-change: transform;
+filter: contrast(100%);
 
 ${Link}:hover &,
 ${Link}:focus &{
   transform: scale(1.1);
   transition: transform 100ms;
+  filter: contrast(110%);
+
 }
 
 
