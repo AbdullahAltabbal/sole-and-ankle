@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
 
@@ -33,21 +33,21 @@ const ShoeCard = ({
 
   return (
     <Link href={`/shoe/${slug}`}>
-       <Wrapper>
+      <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         {variant === 'on-sale' && <SaleFlag>Sale</SaleFlag>}
-          {variant === 'new-release' && (
-            <ReleaseFlag>Just released!</ReleaseFlag>
-          )}
+        {variant === 'new-release' && (
+          <ReleaseFlag>Just released!</ReleaseFlag>
+        )}
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
           <Price
             style={{
               '--color':
-                variant === 'on-sale' ? COLORS.gray[700] : undefined,
+                variant === 'on-sale' ? 'var(--color-gray-700)' : undefined,
               '--text-decoration':
                 variant === 'on-sale' ? 'line-through' : undefined,
             }}
@@ -107,22 +107,21 @@ const Row = styled.div`
 
 const Name = styled.h3`
   font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
 `;
 
 const Price = styled.span`
-color: var(--color);
+  color: var(--color);
 text-decoration: var(--text-decoration);
 `;
 
 const ColorInfo = styled.p`
-  color: ${COLORS.gray[700]};
-  text-decoration: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
 `;
 
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.primary};
+  color: var(--color-primary);
 `;
 
 const Flag = styled.div`
@@ -136,16 +135,15 @@ border-radius: 2px;
   padding: 0  10px;
   font-size: ${14 / 18}rem;
   font-weight: ${WEIGHTS.bold};
-  color: ${COLORS.white};
+  color: var(--color-white);
 `
 
 const SaleFlag = styled(Flag)`
-  background-color: ${COLORS.primary};
+background-color: var(--color-primary);
 `
 
-
 const ReleaseFlag = styled(Flag)`
-  background-color: ${COLORS.secondary};
+   background-color: var(--color-secondary);
 `
 
 export default ShoeCard;
