@@ -66,6 +66,11 @@ table {
   isolation: isolate;
 }
 
+html{
+
+  --reach-dialog:1;
+}
+
 html, body, #root {
   height: 100%;
 }
